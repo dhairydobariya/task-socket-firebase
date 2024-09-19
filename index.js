@@ -3,9 +3,9 @@ const dotenv = require('dotenv');
 const dbConnect = require('./config/dbConnect');
 const cors = require('cors');
 const taskRouter = require('./router/taskRoutes');
-const authRouter = require('./router/authRoutes');
-const notificationRoutes = require('./router/notificationRoutes');
-const teamRoute = require('./router/teamRoutes')
+const authRouter = require('./router/userroute');
+const notificationRoutes = require('./router/firebasenotification');
+const teamRoute = require('./router/admin')
 const { initSocket } = require('./socket');
 const http = require('http');
 dotenv.config();

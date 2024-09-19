@@ -1,5 +1,5 @@
-const TaskModel = require('../models/Task');
-const UserModel = require('../models/User');
+const TaskModel = require('../models/TaskModel');
+const UserModel = require('../models/UserModel');
 
 
 // Create Task (Admin or User)
@@ -17,7 +17,7 @@ const createTask = async (req, res) => {
         const task = new TaskModel({
             Task,
             Description,
-            AssignedBy: Role === 'admin' ? UserId : req.body.UserId,  // Admin can assign tasks to any user
+            userid: Role === 'admin' ? UserId : req.body.UserId,  // Admin can assign tasks to any user
             AssignedTo: UserId,
             IsAssignedByAdmin: Role === 'admin' ? true : false 
         });

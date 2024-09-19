@@ -1,5 +1,5 @@
-const admin = require('../config/firebaseAdmin'); // Ensure firebaseConfig is properly set up
-const UserModel = require('../models/User');
+const admin = require('../database/firebaseconnect'); // Ensure firebaseConfig is properly set up
+const UserModel = require('../models/UserModel');
 
 // Function to send notification
 const sendNotification = async (token, title, body) => {

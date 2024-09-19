@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const notificationController = require('../controller/notificationController');
+const notificationController = require('../controller/fierbasenotification');
 
 // Define route for sending notifications
 router.post('/send', (req, res) => {

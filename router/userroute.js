@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { register, login, saveFcmToken } = require('../controller/authController');
-const { notifyTaskAssignment } = require('../controller/notificationController'); // Assuming this controller is created
+const { register, login, saveFcmToken } = require('../controller/usercontroller');
+const { notifyTaskAssignment } = require('../controller/fierbasenotification'); // Assuming this controller is created
 
 // Route to register user
 router.post('/register', register);

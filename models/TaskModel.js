@@ -13,7 +13,7 @@ const Task = mongoose.Schema({
         default: 'current',
         enum: ['current','pending', 'completed'],
     },
-    AssignedBy: {
+    userid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },

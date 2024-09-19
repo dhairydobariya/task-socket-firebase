@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const TaskModel = require("../models/Task");
+const TaskModel = require("../models/TaskModel");
 const { getIO } = require("../socket");
 
 const createTask = async (req, res) => {
@@ -10,7 +10,7 @@ const createTask = async (req, res) => {
             Task: title,
             Description: description, 
             Status: status,
-            AssignedBy: userId,
+            userid: userId,
         });
         task.save();
         getIO().emit('new-task', task);       
@@ -24,7 +24,7 @@ const createTask = async (req, res) => {
 const getTasks = async (req, res) => {
     try {
         const userId = req.user.user.id;
-        const tasks = await TaskModel.find({ AssignedBy: userId });
+        const tasks = await TaskModel.find({ userid: userId });
         res.status(200).json(tasks);
     } catch (error) {
         res.status(500).json({ error: error.message });
